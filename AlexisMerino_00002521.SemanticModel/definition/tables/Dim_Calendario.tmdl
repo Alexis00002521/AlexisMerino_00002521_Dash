@@ -1,6 +1,11 @@
 table Dim_Calendario
 	lineageTag: 2c4350ec-05fb-44ae-8414-d5b7041d3d72
 
+	measure 'Ventas por Fecha' = SUM('Fact_Ventas'[PrecioTotal])
+		lineageTag: a5c94e24-a375-4599-bca8-ef1cf44f0fcb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Fecha
 		dataType: dateTime
 		formatString: Long Date

@@ -102,6 +102,14 @@ table Fact_Ventas
 
 		annotation SummarizationSetBy = Automatic
 
+	column PrecioTotal = ```
+			SUM(Fact_Ventas[Precio Venta sin IGV], Fact_Ventas[IGV]) 
+			```
+		lineageTag: b1c1e8d8-c2f5-4d7e-bbc3-b6f8e2645c98
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Fact_Ventas = m
 		mode: import
 		source =

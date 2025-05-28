@@ -1,0 +1,8 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../AlexisMerino_00002521.SemanticModel"
+    }
+  }
+}

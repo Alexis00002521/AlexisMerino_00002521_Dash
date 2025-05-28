@@ -43,6 +43,14 @@ table Fotos_Vehiculos
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Ventas por Versión' = SUM('Fact_Ventas'[PrecioTotal])
+		lineageTag: 90427774-7112-4604-ac5d-fdb8611104c8
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition Fotos_Vehiculos = m
 		mode: import
 		source =

@@ -1,6 +1,19 @@
 table Fact_Ventas
 	lineageTag: 9710e208-6207-49ea-99a5-2db61c37dc08
 
+	measure NombreConPrecioTotalMaximo = ```
+			
+			CALCULATE(
+			    SELECTEDVALUE(dim_canal[tipo_canal]),
+			    FILTER(
+			        Fact_Ventas,
+			        Fact_Ventas[PrecioTotal] = MAX(Fact_Ventas[PrecioTotal])
+			    )
+			)
+			
+			```
+		lineageTag: c115c06d-cebe-49c4-bbb2-8949941ab50a
+
 	column ID
 		dataType: int64
 		formatString: 0
@@ -102,13 +115,13 @@ table Fact_Ventas
 
 		annotation SummarizationSetBy = Automatic
 
-	column PrecioTotal = ```
-			SUM(Fact_Ventas[Precio Venta sin IGV], Fact_Ventas[IGV]) 
-			```
+	column PrecioTotal = Fact_Ventas[Precio Venta sin IGV] + Fact_Ventas[IGV]
 		lineageTag: b1c1e8d8-c2f5-4d7e-bbc3-b6f8e2645c98
-		summarizeBy: none
+		summarizeBy: sum
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition Fact_Ventas = m
 		mode: import

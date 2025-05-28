@@ -43,6 +43,15 @@ table dim_vehiculo
 
 		annotation SummarizationSetBy = Automatic
 
+	column Autos = ```
+			'dim_vehiculo'[marca_vehiculo] & " " & 'dim_vehiculo'[modelo_vehiculo]
+			
+			```
+		lineageTag: ceac6feb-bc1d-451d-aeab-d8a6524486aa
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition dim_vehiculo = m
 		mode: import
 		source =

@@ -4,8 +4,8 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 50.000000000000014,
-        "y": 5.1212631170037071
+        "x": 0,
+        "y": 0
       },
       "nodes": [
         {
@@ -75,8 +75,8 @@
         },
         {
           "location": {
-            "x": 583.559511983239,
-            "y": -50
+            "x": 611.90448798323894,
+            "y": 0
           },
           "nodeIndex": "Dim_Vendedor",
           "nodeLineageTag": "b67ed22d-a98a-4140-aa6a-c824a62c2871",
@@ -127,7 +127,7 @@
         }
       ],
       "name": "All tables",
-      "zoomValue": 100,
+      "zoomValue": 56.447393005377734,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,
